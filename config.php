@@ -1,6 +1,6 @@
 <?php
 // InfinityFree MySQL Credentials
-$host = "sql213.infinityfree.com";
+$host = "localhost";   // IMPORTANT: InfinityFree uses localhost
 $dbname = "if0_40525148_gymtrackerdb";
 $username = "if0_40525148";
 $password = "adityarokade20";
@@ -16,6 +16,6 @@ if (!$conn) {
     ]));
 }
 
-// Allowed users (same as before)
+// Allowed users
 define('ALLOWED_USERS', ['Aditya', 'Anurag', 'Aryan', 'Harshwardhan']);
 ?>
