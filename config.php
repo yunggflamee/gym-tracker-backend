@@ -1,18 +1,21 @@
 <?php
-// Database configuration
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root'); // Your DB username
-define('DB_PASSWORD', '');     // Your DB password
-define('DB_NAME', 'gym_tracker_db');
+// InfinityFree MySQL Credentials
+$host = "sql213.infinityfree.com";
+$dbname = "if0_40525148_gymtrackerdb";
+$username = "if0_40525148";
+$password = "adityarokade20";
 
-// Create a new database connection
- $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// Create MySQL connection
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die(json_encode([
+        'success' => false,
+        'message' => 'Database connection failed: ' . mysqli_connect_error()
+    ]));
 }
 
-// Allowed users
+// Allowed users (same as before)
 define('ALLOWED_USERS', ['Aditya', 'Anurag', 'Aryan', 'Harshwardhan']);
 ?>
